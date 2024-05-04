@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'widget_tweaks',
     'volunteer',
+    'youth_league'
 ]
 
 MIDDLEWARE = [
@@ -86,8 +87,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'selection_users',
-        'USER': 'root',
-        'PASSWORD': '123',
+        'USER': 'mingqi',
+        'PASSWORD': 'mingqipwd',
         'HOST': 'localhost',
         'PORT': '3306',
     }

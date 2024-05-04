@@ -108,7 +108,7 @@ def login_view(request, next="/"):
             login_form = LoginForm(request.POST)
 
             if login_form.is_valid():
-
+                
                 username = login_form.cleaned_data['email']
 
                 password = login_form.cleaned_data['password']
