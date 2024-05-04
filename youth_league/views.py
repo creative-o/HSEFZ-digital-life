@@ -15,7 +15,6 @@ from django.contrib.auth.hashers import make_password
 
 def generate_row(type, id, title, date, stu_score, avg, max, type1, id1, id2):
     template = '''
-                    <tbody>
                     <tr>
                         <td id='%s-title-%s'>
                             %s
@@ -33,10 +32,9 @@ def generate_row(type, id, title, date, stu_score, avg, max, type1, id1, id2):
                             %s
                         </td>
                         <td>
-                            <button type='button' class='appeal-link' %s_id=%s data-toggle="modal" data-target="#appeal-window" onclick="showAppealWindow(%s);">申诉</button>
+                            <button type='button' class='appeal-link btn btn-outline-secondary btn-sm' %s_id=%s data-toggle="modal" data-target="#appeal-window" onclick="showAppealWindow(%s);">申诉</button>
                         </td>
                     </tr>
-                    </tbody>
     '''
     return template % (type, id, title,  date, stu_score, avg, max, type1, id1, id2)
 
@@ -220,7 +218,7 @@ def test_score_manage(request):
 def generate_row_appeal_not_handled(appeal_id, stu_no, title, content, time):
     template = '''
                 <button class="btn btn-outline-primary btn-block" type="button" data-toggle="collapse" data-target="#appeal-window-container-%s" aria-expanded="false" aria-controls="collapseExample">
-                    申诉课程：%s
+                    申诉课程（考试）：%s
                     &nbsp; &nbsp; &nbsp;
                     申诉学生学号：%s
                     &nbsp; &nbsp; &nbsp;
@@ -246,8 +244,8 @@ def generate_row_appeal_not_handled(appeal_id, stu_no, title, content, time):
 
 def generate_row_appeal_handled(appeal_id, stu_no, title, content, time, response):
     template = '''
-                <button class="btn btn-outline-primary btn-block" type="button" data-toggle="collapse" data-target="#appeal-window-container-%s" aria-expanded="false" aria-controls="collapseExample">
-                    作业申诉：%s
+                <button class="btn btn-outline-secondary btn-block" type="button" data-toggle="collapse" data-target="#appeal-window-container-%s" aria-expanded="false" aria-controls="collapseExample">
+                    申诉课程（考试）：%s
                     &nbsp; &nbsp; &nbsp;
                     申诉学生学号：%s
                     &nbsp; &nbsp; &nbsp;
@@ -262,7 +260,7 @@ def generate_row_appeal_handled(appeal_id, stu_no, title, content, time, respons
                     回复内容：
                     <li class="list-group-item">%s</li>
                     <br>
-                    重新回复：
+                    重新提交回复：
                     <li class="list-group-item">            
                         <input type="hidden" id="appeal-id" name="appeal_id">
                         <textarea class="form-control" id="appeal-respond-input-%s" name="appeal_respond_content" rows="10"></textarea>

@@ -30,14 +30,14 @@
 
 {% csrf_token %}
 
-<h2>未处理：</h2>
+<h3>未处理：</h3>
 {% autoescape off %}
 {{ content_not_handled }}
 {% endautoescape %}
 
 <br><br><br>
 
-<h2>已处理：</h2>
+<h3>已处理：</h3>
 {% autoescape off %}
 {{ content_handled }}
 {% endautoescape %}

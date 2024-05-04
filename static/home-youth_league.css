@@ -36,3 +36,7 @@
 .appeal-window-shadow {
     color:red;
 }
+
+.entry-link:hover {
+    cursor: pointer;
+}

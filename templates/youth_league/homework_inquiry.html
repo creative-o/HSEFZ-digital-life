@@ -23,11 +23,11 @@
 <div class="container main-container">
     <div class="row gx-5 justify-content-center">
         
-        <div class="col" style="overflow-x: auto; overflow-y: hidden;">
+        <div class="col" style="overflow-x: auto; overflow-y: hidden; margin-top: 10px;">
             <div class="detail-container">
                 <div class="col-lg score-table">
-                    <table class="table">
-                        <thead>
+                    <table class="table table-hover">
+                        <thead class="thead-light">
                             <tr>
                                 <th class="name-title">课程名称</th>
                                 <th class="snum-title">上课时间</th>
@@ -37,11 +37,11 @@
                                 <th class="date-title">操作</th>
                             </tr>
                         </thead>
-                        
-                        {% autoescape off %}
-                        {{ content }}
-                        {% endautoescape %}
-
+                        <tbody>
+                            {% autoescape off %}
+                            {{ content }}
+                            {% endautoescape %}
+                        </tbody>
                     </table>
                 </div>
             </div>
@@ -50,8 +50,8 @@
 
 
   
-    <div class="modal fade" id="appeal-window" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="appealWindowLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal fade" id="appeal-window" data-backdrop="static" role="dialog" data-keyboard="false" tabindex="-1" aria-labelledby="appealWindowLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
             <form method="post" action="">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -72,6 +72,9 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
                         <button type="submit" class="btn btn-primary">提交</button>
                     </div>
+
+
+
                 </div>
             </form>
         </div>
